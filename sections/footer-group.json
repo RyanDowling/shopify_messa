@@ -11,20 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "school_hiring_cta_4HzCwR": {
-      "type": "school-hiring-cta",
-      "name": "School/Club Hiring CTA",
-      "settings": {
-        "title": "Partner with Maximum Effort",
-        "text": "",
-        "link": "",
-        "btn_label": "Enquire Now",
-        "bg_color": "#1c1c1c",
-        "text_color": "#ffffff",
-        "btn_color": "#ffcd00",
-        "btn_text_color": "#000000"
-      }
-    },
     "footer": {
       "type": "footer",
       "custom_css": [],
@@ -45,7 +31,6 @@
     }
   },
   "order": [
-    "school_hiring_cta_4HzCwR",
     "footer"
   ]
 }
