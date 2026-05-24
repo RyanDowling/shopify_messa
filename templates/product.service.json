@@ -59,18 +59,18 @@
         "whats_included": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What's included",
+            "heading": "What's included in every session",
             "icon": "check_mark",
-            "row_content": "<p>Update this in the Shopify theme editor — list everything that comes with this coaching package (e.g. weekly sessions, video analysis, program design).</p>",
+            "row_content": "<p>All sessions are open coaching — sprints, hurdles, jumps, throws, and gym-based conditioning are all available. Athletes train what's on the program that day. There are no discipline restrictions and no separate ticketing per event.</p>",
             "page": ""
           }
         },
-        "who_is_it_for": {
+        "pricing": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Who is this for",
-            "icon": "person",
-            "row_content": "<p>Describe the ideal athlete for this program — age group, experience level, events, goals.</p>",
+            "heading": "Pricing options",
+            "icon": "price_tag",
+            "row_content": "<ul><li><strong>Single Session — $15:</strong> Pay per session, no commitment.</li><li><strong>Weekly Pass — $40:</strong> Unlimited sessions for the week.</li><li><strong>Monthly Membership — $150:</strong> Unlimited sessions for the calendar month.</li><li><strong>Term Membership — $300:</strong> Unlimited sessions for the full term.</li></ul><p>All passes include access to every session run during your period.</p>",
             "page": ""
           }
         },
@@ -79,7 +79,7 @@
           "settings": {
             "heading": "How it works",
             "icon": "stopwatch",
-            "row_content": "<p>Explain what happens after signing up — first contact, trial session, ongoing schedule, communication channels.</p>",
+            "row_content": "<p>Select your preferred pass above and complete your registration. New athletes should first attend a free Come &amp; Try session — <a href=\"/pages/how-to-join\">register here</a>. Check the <a href=\"/pages/training-timetable\">Training Timetable</a> for current session times before attending.</p>",
             "page": ""
           }
         },
@@ -88,7 +88,7 @@
           "settings": {
             "heading": "Location & schedule",
             "icon": "map_pin",
-            "row_content": "<p>Where training takes place (Willoughby Council Grounds, Sydney Olympic Park) and typical session times.</p>",
+            "row_content": "<p>Sessions run at two venues:</p><ul><li><strong>Willoughby Council Grounds</strong> — our home ground. Check the <a href=\"/pages/field-status\">Field Status page</a> before travelling as natural turf closures apply.</li><li><strong>Sydney Olympic Park Athletic Centre (SOPAC)</strong> — world-class facility. Entry fees apply separately at SOPAC.</li></ul>",
             "page": ""
           }
         },
@@ -97,14 +97,14 @@
           "settings": {
             "heading": "Safety & compliance",
             "icon": "shield",
-            "row_content": "<p>All Maximum Effort Academy coaches hold current Working With Children Checks. We are fully insured and operate in accordance with Athletics NSW guidelines.</p>",
+            "row_content": "<p>All Maximum Effort Academy coaches hold current Working With Children Checks and are fully insured. We operate in accordance with Athletics NSW guidelines. WWCC numbers are displayed on our <a href=\"/pages/about-us\">About Us</a> page.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
         "whats_included",
-        "who_is_it_for",
+        "pricing",
         "how_it_works",
         "location",
         "wwcc"
