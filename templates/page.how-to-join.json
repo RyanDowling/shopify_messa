@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "athlete_categories": {
+      "type": "athlete-categories",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "athlete_categories",
+    "main"
+  ]
+}
