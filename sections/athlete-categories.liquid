@@ -2,7 +2,8 @@
   <div class="athlete-categories-grid">
 
     <div class="athlete-category-card">
-      <div class="athlete-category-card__header athlete-category-card__header--juniors">
+      <div class="athlete-category-card__accent"></div>
+      <div class="athlete-category-card__header">
         <span class="athlete-category-card__label">Maximum Juniors</span>
         <span class="athlete-category-card__age">Ages 12–18</span>
       </div>
@@ -18,7 +19,8 @@
     </div>
 
     <div class="athlete-category-card">
-      <div class="athlete-category-card__header athlete-category-card__header--opens">
+      <div class="athlete-category-card__accent"></div>
+      <div class="athlete-category-card__header">
         <span class="athlete-category-card__label">Opens</span>
         <span class="athlete-category-card__age">Ages 19–30</span>
       </div>
@@ -34,7 +36,8 @@
     </div>
 
     <div class="athlete-category-card">
-      <div class="athlete-category-card__header athlete-category-card__header--masters">
+      <div class="athlete-category-card__accent"></div>
+      <div class="athlete-category-card__header">
         <span class="athlete-category-card__label">Masters</span>
         <span class="athlete-category-card__age">Ages 30+</span>
       </div>
@@ -54,13 +57,13 @@
 
 <style>
   .athlete-categories-section {
-    padding: 48px 20px 32px;
+    padding: 40px 20px 40px;
   }
 
   .athlete-categories-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   @media screen and (min-width: 750px) {
@@ -70,52 +73,46 @@
   }
 
   .athlete-category-card {
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  .athlete-category-card__accent {
+    height: 6px;
+    background-color: #82f2b3;
+    width: 100%;
   }
 
   .athlete-category-card__header {
-    padding: 28px 24px 24px;
+    padding: 24px 24px 20px;
+    background-color: #111111;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-  }
-
-  .athlete-category-card__header--juniors {
-    background-color: #82f2b3;
-    color: #0a2910;
-  }
-
-  .athlete-category-card__header--opens {
-    background-color: #27282a;
-    color: #ffffff;
-  }
-
-  .athlete-category-card__header--masters {
-    background-color: #4661cb;
-    color: #ffffff;
+    gap: 6px;
   }
 
   .athlete-category-card__label {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 800;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #ffffff;
   }
 
   .athlete-category-card__age {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.85;
+    letter-spacing: 0.1em;
+    color: #82f2b3;
   }
 
   .athlete-category-card__body {
-    padding: 28px 24px;
+    padding: 24px;
     background-color: #ffffff;
     flex: 1;
     display: flex;
@@ -126,7 +123,7 @@
   .athlete-category-card__body p {
     font-size: 1.1rem;
     line-height: 1.65;
-    color: #333;
+    color: #222;
     margin: 0;
   }
 
@@ -135,22 +132,27 @@
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
   }
 
   .athlete-category-card__body li {
     font-size: 1.05rem;
     line-height: 1.55;
-    color: #444;
+    color: #333;
+  }
+
+  .athlete-category-card__body strong {
+    color: #111;
   }
 
   .athlete-category-card__note {
     font-size: 1rem !important;
     color: #555 !important;
     font-style: italic;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid #ebebeb;
     padding-top: 14px;
     margin-top: auto !important;
+    line-height: 1.5;
   }
 </style>
 
