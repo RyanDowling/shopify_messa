@@ -31,8 +31,8 @@
     }
   },
   "order": [
-    "7fd2522f-43c3-4b86-bf32-ac76cd9e28cc",
     "athlete_categories",
+    "7fd2522f-43c3-4b86-bf32-ac76cd9e28cc",
     "onboarding_steps",
     "forms"
   ]
