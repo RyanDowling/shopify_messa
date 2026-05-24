@@ -1,40 +1,46 @@
 <div class="htj-steps-section page-width">
-  <div class="htj-steps-grid">
+  <div class="htj-steps-flow">
 
-    <div class="htj-step-card">
-      <div class="htj-step-card__header">
-        <span class="htj-step-card__num">01</span>
-        <div class="htj-step-card__title-row">
-          <span class="htj-step-card__label">Come &amp; Try</span>
-        </div>
-      </div>
-      <div class="htj-step-card__body">
-        <p>Experience our coaching approach first-hand with a free no-obligation session. Meet the coaches, try our training methods, and see if we're the right fit.</p>
-        <ul>
-          <li>Free — no cost, no commitment</li>
-          <li>All disciplines available on the day — sprints, hurdles, jumps, throws</li>
-          <li>Coaches will assess your background and point you to the right program</li>
-        </ul>
-        <a href="/pages/come-and-try" class="htj-step-card__btn">Register for Come &amp; Try</a>
+    <div class="htj-step">
+      <div class="htj-step__num">01</div>
+      <div class="htj-step__card">
+        <h3 class="htj-step__title">Book a Come &amp; Try Session</h3>
+        <p>Experience our coaching approach first-hand with a free no-obligation trial session. Meet the coaches, try our training methods, and see if we're the right fit.</p>
+        <a href="/pages/free-come-and-try" class="htj-step__btn">Register for Come &amp; Try</a>
       </div>
     </div>
 
-    <div class="htj-step-card">
-      <div class="htj-step-card__header">
-        <span class="htj-step-card__num">02</span>
-        <div class="htj-step-card__title-row">
-          <span class="htj-step-card__label">Become a Member</span>
-        </div>
+    <div class="htj-step">
+      <div class="htj-step__num">02</div>
+      <div class="htj-step__card">
+        <h3 class="htj-step__title">Meet and Greet</h3>
+        <p>After your trial session you'll have a brief meet and greet with one of our coaches to discuss your goals, experience, and the best training group for your needs.</p>
       </div>
-      <div class="htj-step-card__body">
-        <p>Once you've attended a Come &amp; Try, choose the pass that suits your training schedule. All passes give access to every session during your period.</p>
-        <ul>
-          <li><strong>Single Session — $15</strong></li>
-          <li><strong>Weekly Pass — $40</strong></li>
-          <li><strong>Monthly Membership — $150</strong></li>
-          <li><strong>Term Membership — $300</strong></li>
-        </ul>
-        <a href="/collections/coaching-services" class="htj-step-card__btn">View Coaching Packages</a>
+    </div>
+
+    <div class="htj-step">
+      <div class="htj-step__num">03</div>
+      <div class="htj-step__card">
+        <h3 class="htj-step__title">Complete the Athlete Intake Form</h3>
+        <p>If you decide to join, the next step is completing our intake form. This helps us understand your athletic history, goals, and any specific needs.</p>
+        <a href="/pages/trial-successful-join-now" class="htj-step__btn">Athlete Intake Form</a>
+      </div>
+    </div>
+
+    <div class="htj-step">
+      <div class="htj-step__num">04</div>
+      <div class="htj-step__card">
+        <h3 class="htj-step__title">Coach Review &amp; Confirmation</h3>
+        <p>Our coaching team will review your information and contact you within 3 business days to confirm your placement and provide details about your first regular session.</p>
+      </div>
+    </div>
+
+    <div class="htj-step">
+      <div class="htj-step__num">05</div>
+      <div class="htj-step__card">
+        <h3 class="htj-step__title">Optional: Scholarship Application</h3>
+        <p>We offer a limited number of scholarships for talented athletes. If this applies to you, you can apply for scholarship consideration.</p>
+        <a href="https://forms.office.com/r/33fZRRtCvd" target="_blank" class="htj-step__btn">Scholarship Application</a>
       </div>
     </div>
 
@@ -46,108 +52,96 @@
     padding: 0 20px 60px;
   }
 
-  .htj-steps-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .htj-steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .htj-step-card {
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-color: #111111;
-  }
-
-  .htj-step-card__header {
-    padding: 28px 28px 24px;
-    border-bottom: 4px solid #82f2b3;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .htj-step-card__num {
-    font-size: 3.5rem;
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    color: #82f2b3;
-    display: block;
-  }
-
-  .htj-step-card__title-row {
-    display: flex;
-    align-items: center;
-  }
-
-  .htj-step-card__label {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #ffffff;
-  }
-
-  .htj-step-card__body {
-    padding: 28px;
-    flex: 1;
+  .htj-steps-flow {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .htj-step-card__body p {
-    font-size: 1.1rem;
+  .htj-step {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #111111;
+  }
+
+  .htj-step__num {
+    flex-shrink: 0;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: #82f2b3;
+    background-color: #0d0d0d;
+    border-right: 4px solid #82f2b3;
+    padding: 24px 16px;
+  }
+
+  .htj-step__card {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .htj-step__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .htj-step__card p {
+    font-size: 1.05rem;
     line-height: 1.65;
     color: #e0e0e0;
     margin: 0;
   }
 
-  .htj-step-card__body ul {
-    margin: 0;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-  }
-
-  .htj-step-card__body li {
-    font-size: 1.05rem;
-    line-height: 1.55;
-    color: #e0e0e0;
-  }
-
-  .htj-step-card__body strong {
-    color: #ffffff;
-  }
-
-  .htj-step-card__btn {
+  .htj-step__btn {
     display: inline-block;
+    align-self: flex-start;
     background-color: #82f2b3;
     color: #0a2910;
-    padding: 14px 24px;
-    font-size: 1rem;
+    padding: 12px 22px;
+    font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    text-align: center;
-    margin-top: auto;
+    margin-top: 4px;
     transition: opacity 0.2s ease;
   }
 
-  .htj-step-card__btn:hover {
+  .htj-step__btn:hover {
     opacity: 0.85;
+  }
+
+  @media screen and (max-width: 749px) {
+    .htj-step {
+      flex-direction: column;
+    }
+
+    .htj-step__num {
+      width: 100%;
+      height: 64px;
+      border-right: none;
+      border-bottom: 4px solid #82f2b3;
+      padding: 12px 24px;
+      justify-content: flex-start;
+    }
+
+    .htj-step__card {
+      padding: 20px;
+    }
   }
 </style>
 
