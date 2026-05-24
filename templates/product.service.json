@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "service_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "whats_included": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's included",
+            "icon": "check_mark",
+            "row_content": "<p>Update this in the Shopify theme editor — list everything that comes with this coaching package (e.g. weekly sessions, video analysis, program design).</p>",
+            "page": ""
+          }
+        },
+        "who_is_it_for": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Who is this for",
+            "icon": "person",
+            "row_content": "<p>Describe the ideal athlete for this program — age group, experience level, events, goals.</p>",
+            "page": ""
+          }
+        },
+        "how_it_works": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How it works",
+            "icon": "stopwatch",
+            "row_content": "<p>Explain what happens after signing up — first contact, trial session, ongoing schedule, communication channels.</p>",
+            "page": ""
+          }
+        },
+        "location": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Location & schedule",
+            "icon": "map_pin",
+            "row_content": "<p>Where training takes place (Willoughby Council Grounds, Sydney Olympic Park) and typical session times.</p>",
+            "page": ""
+          }
+        },
+        "wwcc": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Safety & compliance",
+            "icon": "shield",
+            "row_content": "<p>All Maximum Effort Academy coaches hold current Working With Children Checks. We are fully insured and operate in accordance with Athletics NSW guidelines.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "whats_included",
+        "who_is_it_for",
+        "how_it_works",
+        "location",
+        "wwcc"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Program details",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": true,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "service_faq"
+  ]
+}
