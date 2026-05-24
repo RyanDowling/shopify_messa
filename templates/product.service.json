@@ -88,7 +88,7 @@
           "settings": {
             "heading": "Location & schedule",
             "icon": "map_pin",
-            "row_content": "<p>Sessions run at two venues:</p><ul><li><strong>Willoughby Council Grounds</strong> — our home ground. Check the <a href=\"/pages/field-status\">Field Status page</a> before travelling as natural turf closures apply.</li><li><strong>Sydney Olympic Park Athletic Centre (SOPAC)</strong> — world-class facility. Entry fees apply separately at SOPAC.</li></ul>",
+            "row_content": "<p>Sessions run at two venues:</p><ul><li><strong>Willoughby Council Grounds</strong> — our home ground. Check the <a href=\"/pages/training-ground-status\">Field Status page</a> before travelling as natural turf closures apply.</li><li><strong>Sydney Olympic Park Athletic Centre (SOPAC)</strong> — world-class facility. Entry fees apply separately at SOPAC.</li></ul>",
             "page": ""
           }
         },
