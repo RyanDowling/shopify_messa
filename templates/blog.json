@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_PbXrHQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WAUgif": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_8eK3c3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Since 2018, Maximum Effort Academy has been at the forefront of speed and strength development. While our <strong>WhatsApp and Discord</strong> communities remain our go-to for instant alerts and daily session updates, social media is often too \"instant\"—valuable insights can be easily buried or forgotten in the feed.</p><p>In 2026, we made the strategic decision to centralise our core knowledge here. This hub is designed to complement our socials by providing a permanent home for:</p><ul><li><strong>In-Depth Research:</strong> Scientific coaching principles that require more than just a caption.</li><li><strong>Season Archives:</strong> Results that stay accessible long after the notification has disappeared.</li><li><strong>Technical Analysis:</strong> Drills and methodologies you can refer back to throughout your journey.</li><li>By moving our deep-dive content from social platforms to our own website, we ensure every athlete has 24/7 access to the foundational tools and history that define our Academy.</li></ul>"
+          }
+        },
+        "button_d9wGxX": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_WAUgif",
+        "text_8eK3c3",
+        "button_d9wGxX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "collage",
+        "show_image": true,
+        "image_height": "small",
+        "show_date": true,
+        "show_author": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "rich_text_PbXrHQ",
+    "main"
+  ]
+}

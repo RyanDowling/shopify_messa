@@ -1,0 +1,91 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  /* TARGETED HIDE FOR DASHBOARD AND TIMETABLE */
+  {% if page.handle == 'athletic-performance-dashboard' or page.handle == 'training-timetable' %}
+    .main-page-title, 
+    .page-title, 
+    .h0,
+    .breadcrumb,
+    header.section-header {
+      display: none !important;
+    }
+
+    /* Reduce top padding now that the title is gone, but keep enough for the frame */
+    .section-{{ section.id }}-padding {
+      padding-top: 10px !important;
+    }
+  {% endif %}
+
+  /* FRAME & OVERFLOW FIX */
+  @media screen and (max-width: 749px) {
+    /* Keep the native Shopify page-width to preserve the white frame.
+       We only target the internal RTE div to prevent horizontal scrolling.
+    */
+    .rte {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Ensure the container doesn't force a stretch */
+    .page-width {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  {%- unless page.handle == 'athletic-performance-dashboard' or page.handle == 'training-timetable' -%}
+    <h1 class="main-page-title page-title h0">
+      {{ page.title | escape }}
+    </h1>
+  {%- endunless -%}
+  
+  <div class="rte">
+    {{ page.content }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-page.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

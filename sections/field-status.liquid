@@ -1,0 +1,287 @@
+<div class="field-status-section" data-script-url="{{ section.settings.google_script_url }}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <div class="status-section-header">
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+
+    <div class="status-grid">
+      
+      <div class="timetable-card" data-venue="Willoughby Council Grounds">
+        <div class="card-header-row">
+          <div>
+            <p class="meta-date status-badge">LOADING...</p>
+            <h3 class="card-title">Willoughby Council Grounds</h3>
+          </div>
+          <div class="card-icon-wrapper">
+             🏟️
+          </div>
+        </div>
+
+        <div class="log-note-box">
+          <p class="log-label">CURRENT STATUS</p>
+          <p class="log-text status-message">
+             If the council site lists "Natural Turf Sportsgrounds" as <strong>CLOSED</strong>, training is cancelled.
+          </p>
+        </div>
+
+        <div class="card-footer">
+          <div class="footer-tags">
+             <span class="tag-dot">•</span> <span class="footer-text">WILLOUGHBY COUNCIL</span>
+             <span class="tag-dot">•</span> <span class="footer-text">HOME GROUND</span>
+          </div>
+          
+          <div class="footer-actions">
+             <a href="https://www.willoughby.nsw.gov.au/Residents/Parks-and-recreation/Ground-closures" target="_blank" class="text-link">Check Council Site &rarr;</a>
+             <a href="tel:0297777631" class="text-link">Wet Weather Line</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timetable-card" data-venue="Sydney Olympic Park">
+        <div class="card-header-row">
+          <div>
+            <p class="meta-date status-badge">LOADING...</p>
+            <h3 class="card-title">Sydney Olympic Park</h3>
+          </div>
+          <div class="card-icon-wrapper">
+             ⚡
+          </div>
+        </div>
+
+        <div class="log-note-box">
+          <p class="log-label">AVAILABILITY NOTE</p>
+          <p class="log-text status-message">
+             Always check the General Training Timetable before travelling.
+          </p>
+        </div>
+
+        <div class="card-footer">
+          <div class="footer-tags">
+             <span class="tag-dot">•</span> <span class="footer-text">SOPAC</span>
+             <span class="tag-dot">•</span> <span class="footer-text">ATHLETIC CENTRE</span>
+          </div>
+          
+          <div class="footer-actions">
+             <a href="https://www.sydneyolympicpark.nsw.gov.au/athletic-centre/general-training-timetable" target="_blank" class="text-link">View Timetable &rarr;</a>
+             <a href="https://www.sydneyolympicpark.nsw.gov.au/athletic-centre/venue-information" target="_blank" class="text-link">Entry Fees</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  /* 1. Container & Grid */
+  .field-status-section {
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+  }
+
+  .status-section-header h2 {
+    font-size: 2rem; /* Increased from 1.5rem */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .status-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: 750px) {
+    .status-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* 2. The Card */
+  .timetable-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .timetable-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  /* 3. Header Area */
+  .card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .meta-date {
+    font-size: 0.9rem; /* Increased from 0.75rem */
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+  
+  .timetable-card[data-status="OPEN"] .meta-date { color: #27ae60; }
+  .timetable-card[data-status="CLOSED"] .meta-date { color: #c0392b; }
+  .timetable-card[data-status="CAUTION"] .meta-date { color: #f39c12; }
+
+  .card-title {
+    font-size: 1.75rem; /* Increased from 1.5rem */
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .card-icon-wrapper {
+    width: 45px; /* Slightly larger wrapper */
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    border-radius: 8px;
+    font-size: 1.4rem; /* Icon size up */
+    color: #666;
+    border: 1px solid #eee;
+  }
+
+  /* 4. The "LOG NOTE" Box */
+  .log-note-box {
+    background-color: #f9f9f9;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .log-label {
+    font-size: 0.8rem; /* Increased from 0.65rem */
+    text-transform: uppercase;
+    color: #a0a0a0;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .log-text {
+    font-size: 1.1rem; /* Increased from 0.95rem */
+    color: #444;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* 5. Footer & Tags */
+  .card-footer {
+    margin-top: auto;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+  }
+  
+  .footer-tags {
+    margin-bottom: 12px;
+    font-size: 0.9rem; /* Increased from 0.8rem */
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .tag-dot { color: #ccc; margin-right: 5px; }
+  
+  .footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .text-link {
+    font-size: 1.05rem; /* Increased from 0.9rem */
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .text-link:hover {
+    border-bottom-color: #000;
+  }
+
+</style>
+
+<script>
+  (function() {
+    const section = document.querySelector('.field-status-section');
+    const scriptUrl = section.dataset.scriptUrl;
+    if (!scriptUrl) return;
+
+    window.handleFieldStatus = function(response) {
+      if (!response || !response.data) return;
+
+      response.data.forEach(record => {
+        const card = document.querySelector(`.timetable-card[data-venue="${record.Venue}"]`);
+        
+        if (card) {
+          const status = record.Status.toUpperCase().trim();
+          card.setAttribute('data-status', status);
+          
+          const badge = card.querySelector('.status-badge');
+          // Simple dot indicators
+          let icon = '';
+          if(status === 'OPEN') icon = '🟢 ';
+          if(status === 'CLOSED') icon = '🔴 ';
+          if(status === 'CAUTION') icon = '🟠 ';
+          
+          badge.textContent = `${icon}${status} • ${record['Last Updated']}`;
+
+          const msg = card.querySelector('.status-message');
+          msg.textContent = record.Message;
+        }
+      });
+    };
+
+    const script = document.createElement('script');
+    script.src = `${scriptUrl}?callback=handleFieldStatus`;
+    document.body.appendChild(script);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Field Status (Timetable)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Training Status"
+    },
+    {
+      "type": "text",
+      "id": "google_script_url",
+      "label": "Google Apps Script URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Field Status (Timetable)"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,257 @@
+{% doc %}
+  @prompt
+    I want to add a rich text field under the header
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-rich-text-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-rich-text-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    line-height: {{ block.settings.line_height }};
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} p {
+    margin: 0 0 1em;
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} h1,
+  .ai-rich-text-content-{{ ai_gen_id }} h2,
+  .ai-rich-text-content-{{ ai_gen_id }} h3,
+  .ai-rich-text-content-{{ ai_gen_id }} h4,
+  .ai-rich-text-content-{{ ai_gen_id }} h5,
+  .ai-rich-text-content-{{ ai_gen_id }} h6 {
+    margin: 0 0 0.5em;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} a {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} a:hover {
+    color: {{ block.settings.link_hover_color }};
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} ul,
+  .ai-rich-text-content-{{ ai_gen_id }} ol {
+    margin: 0 0 1em;
+    padding-left: 1.5em;
+  }
+
+  .ai-rich-text-content-{{ ai_gen_id }} li {
+    margin-bottom: 0.5em;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-rich-text-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding_top | times: 0.7 }}px {{ block.settings.padding_horizontal | times: 0.7 }}px {{ block.settings.padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-rich-text-content-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<rich-text-{{ ai_gen_id }} class="ai-rich-text-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-rich-text-container-{{ ai_gen_id }}">
+    {% if block.settings.content != blank %}
+      <div class="ai-rich-text-content-{{ ai_gen_id }}">
+        {{ block.settings.content }}
+      </div>
+    {% else %}
+      <div class="ai-rich-text-content-{{ ai_gen_id }}" style="color: #999; font-style: italic;">
+        Add your rich text content here
+      </div>
+    {% endif %}
+  </div>
+</rich-text-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class RichText{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+    customElements.define('rich-text-{{ ai_gen_id }}', RichText{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Text",
+      "default": "<p>Add your rich text content here. You can format text, add links, and create lists.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 400,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1200
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Line height",
+      "default": 1.6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#27282a"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Headings",
+      "default": "#27282a"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Links",
+      "default": "#27282a"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Links hover",
+      "default": "#82f2b3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text"
+    }
+  ]
+}
+{% endschema %}

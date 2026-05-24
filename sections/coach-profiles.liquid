@@ -1,0 +1,203 @@
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="coaches-container">
+    {%- for block in section.blocks -%}
+      <div class="coach-card" {{ block.shopify_attributes }}>
+        <div class="coach-image-wrapper">
+          {%- if block.settings.image != blank -%}
+            <img src="{{ block.settings.image | image_url: width: 1200 }}" 
+                 alt="{{ block.settings.name }}" 
+                 loading="lazy"
+                 width="1200"
+                 height="1200">
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        
+        <div class="coach-details">
+          <h2>{{ block.settings.name }}</h2>
+          <p class="coach-role">{{ block.settings.role }}</p>
+          
+          <div class="trust-badge">
+            <p><strong>✓ Working with Children Check</strong><br>
+            <span class="wwcc-number">Number: {{ block.settings.wwcc }}</span></p>
+          </div>
+
+          <div class="coach-bio">
+            {{ block.settings.bio }}
+            {% if block.settings.committee_role != blank %}
+              <p><strong>Committee Role:</strong> {{ block.settings.committee_role }}</p>
+            {% endif %}
+          </div>
+
+          {%- if block.settings.linkedin != blank -%}
+            <a href="{{ block.settings.linkedin }}" target="_blank" class="linkedin-btn">
+              Connect on LinkedIn &rarr;
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  .coaches-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  @media only screen and (min-width: 750px) {
+    .coaches-container {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .coach-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  .coach-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Placeholder style if no image is uploaded */
+  .placeholder-svg {
+    background-color: #ddd;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .coach-role {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+  }
+
+  .trust-badge {
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+  }
+  
+  .wwcc-number {
+    font-family: monospace;
+    color: #333;
+  }
+
+  .linkedin-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+
+  .linkedin-btn:hover {
+    background-color: #005582;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Coach Profiles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Meet Our Coaches"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "coach",
+      "name": "Coach Profile",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Profile Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Coach Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role (e.g. Head Coach)",
+          "default": "Head Coach"
+        },
+        {
+          "type": "text",
+          "id": "wwcc",
+          "label": "WWCC Number",
+          "default": "WWC1234567"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "Biography"
+        },
+        {
+          "type": "text",
+          "id": "committee_role",
+          "label": "Committee Position",
+          "placeholder": "President, Secretary, etc."
+        },
+        {
+          "type": "url",
+          "id": "linkedin",
+          "label": "LinkedIn Profile Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coach Profiles",
+      "blocks": [
+        {
+          "type": "coach"
+        },
+        {
+          "type": "coach"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
