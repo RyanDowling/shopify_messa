@@ -4,16 +4,13 @@
       "type": "athlete-categories",
       "settings": {}
     },
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
+    "how_to_join_steps": {
+      "type": "how-to-join-steps",
+      "settings": {}
     }
   },
   "order": [
     "athlete_categories",
-    "main"
+    "how_to_join_steps"
   ]
 }

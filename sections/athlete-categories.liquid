@@ -3,8 +3,10 @@
 
     <div class="athlete-category-card">
       <div class="athlete-category-card__header">
-        <span class="athlete-category-card__label">Maximum Juniors</span>
-        <span class="athlete-category-card__age">Ages 12–18</span>
+        <span class="athlete-category-card__age-range">12–18</span>
+        <div class="athlete-category-card__title-row">
+          <span class="athlete-category-card__label">Maximum Juniors</span>
+        </div>
       </div>
       <div class="athlete-category-card__body">
         <p>Our junior program develops athletes from the ground up — technique, strength, and confidence across all track and field disciplines.</p>
@@ -19,8 +21,10 @@
 
     <div class="athlete-category-card">
       <div class="athlete-category-card__header">
-        <span class="athlete-category-card__label">Opens</span>
-        <span class="athlete-category-card__age">Ages 19–30</span>
+        <span class="athlete-category-card__age-range">19–30</span>
+        <div class="athlete-category-card__title-row">
+          <span class="athlete-category-card__label">Opens</span>
+        </div>
       </div>
       <div class="athlete-category-card__body">
         <p>For athletes competing or looking to compete at open level. Training is structured around performance outcomes and competition preparation.</p>
@@ -35,8 +39,10 @@
 
     <div class="athlete-category-card">
       <div class="athlete-category-card__header">
-        <span class="athlete-category-card__label">Masters</span>
-        <span class="athlete-category-card__age">Ages 30+</span>
+        <span class="athlete-category-card__age-range">30+</span>
+        <div class="athlete-category-card__title-row">
+          <span class="athlete-category-card__label">Masters</span>
+        </div>
       </div>
       <div class="athlete-category-card__body">
         <p>Masters athletics is one of the most competitive and rewarding categories in the sport. Our coaches understand the demands of masters competition and periodise accordingly.</p>
@@ -78,27 +84,34 @@
   }
 
   .athlete-category-card__header {
-    padding: 28px 28px 20px;
+    padding: 28px 28px 24px;
     border-bottom: 4px solid #82f2b3;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
+  }
+
+  .athlete-category-card__age-range {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: #82f2b3;
+    display: block;
+  }
+
+  .athlete-category-card__title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
   .athlete-category-card__label {
-    font-size: 2.2rem;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: #ffffff;
-  }
-
-  .athlete-category-card__age {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #82f2b3;
+    color: #ffffff;
   }
 
   .athlete-category-card__body {
@@ -106,13 +119,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
   }
 
   .athlete-category-card__body p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.65;
-    color: #e8e8e8;
+    color: #e0e0e0;
     margin: 0;
   }
 
@@ -125,9 +138,9 @@
   }
 
   .athlete-category-card__body li {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.55;
-    color: #e8e8e8;
+    color: #e0e0e0;
   }
 
   .athlete-category-card__body strong {
@@ -135,8 +148,8 @@
   }
 
   .athlete-category-card__note {
-    font-size: 1.05rem !important;
-    color: #aaaaaa !important;
+    font-size: 1rem !important;
+    color: #999999 !important;
     font-style: italic;
     border-top: 1px solid #2a2a2a;
     padding-top: 16px;
