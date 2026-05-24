@@ -1,0 +1,166 @@
+<div class="athlete-categories-section page-width">
+  <div class="athlete-categories-grid">
+
+    <div class="athlete-category-card">
+      <div class="athlete-category-card__header athlete-category-card__header--juniors">
+        <span class="athlete-category-card__label">Maximum Juniors</span>
+        <span class="athlete-category-card__age">Ages 12–18</span>
+      </div>
+      <div class="athlete-category-card__body">
+        <p>Our junior program develops athletes from the ground up — technique, strength, and confidence across all track and field disciplines.</p>
+        <ul>
+          <li>Open to athletes aged <strong>12 and over</strong></li>
+          <li>Athletes aged <strong>10–11</strong> considered under coach consultation based on squad size, training ability, and experience</li>
+          <li>Program transitions to Opens at age 19</li>
+        </ul>
+        <p class="athlete-category-card__note">Not sure if your child is ready? Register for a free Come &amp; Try and our coaches will assess on the day.</p>
+      </div>
+    </div>
+
+    <div class="athlete-category-card">
+      <div class="athlete-category-card__header athlete-category-card__header--opens">
+        <span class="athlete-category-card__label">Opens</span>
+        <span class="athlete-category-card__age">Ages 19–30</span>
+      </div>
+      <div class="athlete-category-card__body">
+        <p>For athletes competing or looking to compete at open level. Training is structured around performance outcomes and competition preparation.</p>
+        <ul>
+          <li>Athletes aged <strong>19 to 30</strong></li>
+          <li>Athletes of any age competing in <strong>Athletics Australia</strong> or <strong>Athletics NSW Open</strong> events</li>
+          <li>All disciplines — sprints, hurdles, jumps, throws, gym-based conditioning</li>
+        </ul>
+        <p class="athlete-category-card__note">Currently competing at open level over 30? You qualify for Opens.</p>
+      </div>
+    </div>
+
+    <div class="athlete-category-card">
+      <div class="athlete-category-card__header athlete-category-card__header--masters">
+        <span class="athlete-category-card__label">Masters</span>
+        <span class="athlete-category-card__age">Ages 30+</span>
+      </div>
+      <div class="athlete-category-card__body">
+        <p>Masters athletics is one of the most competitive and rewarding categories in the sport. Our coaches understand the demands of masters competition and periodise accordingly.</p>
+        <ul>
+          <li><strong>30 and over</strong> for Australian competition</li>
+          <li><strong>35 and over</strong> for World Masters Athletics international competition</li>
+          <li>Training load monitored across micro and macro cycles to manage recovery</li>
+        </ul>
+        <p class="athlete-category-card__note">Ashley McMahon ran sub-11 seconds for 16 consecutive years from age 29–45. We understand masters performance.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .athlete-categories-section {
+    padding: 48px 20px 32px;
+  }
+
+  .athlete-categories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .athlete-categories-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .athlete-category-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .athlete-category-card__header {
+    padding: 24px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .athlete-category-card__header--juniors {
+    background-color: #82f2b3;
+    color: #0a2910;
+  }
+
+  .athlete-category-card__header--opens {
+    background-color: #27282a;
+    color: #ffffff;
+  }
+
+  .athlete-category-card__header--masters {
+    background-color: #4661cb;
+    color: #ffffff;
+  }
+
+  .athlete-category-card__label {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .athlete-category-card__age {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+  }
+
+  .athlete-category-card__body {
+    padding: 20px;
+    background-color: #ffffff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .athlete-category-card__body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+  }
+
+  .athlete-category-card__body ul {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .athlete-category-card__body li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  .athlete-category-card__note {
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    font-style: italic;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+    margin-top: auto !important;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Athlete Categories",
+  "presets": [
+    {
+      "name": "Athlete Categories"
+    }
+  ]
+}
+{% endschema %}

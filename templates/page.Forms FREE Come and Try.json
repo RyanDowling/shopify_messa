@@ -1,16 +1,11 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "7fd2522f-43c3-4b86-bf32-ac76cd9e28cc": {
       "type": "main-page",
+      "settings": {}
+    },
+    "athlete_categories": {
+      "type": "athlete-categories",
       "settings": {}
     },
     "onboarding_steps": {
@@ -37,6 +32,7 @@
   },
   "order": [
     "7fd2522f-43c3-4b86-bf32-ac76cd9e28cc",
+    "athlete_categories",
     "onboarding_steps",
     "forms"
   ]
