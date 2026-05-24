@@ -1,19 +1,58 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
+    "hero_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "hero_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Train Like an Elite. Perform Like One.",
+            "heading_size": "h1"
+          }
+        },
+        "hero_text": {
+          "type": "text",
+          "settings": {
+            "text": "Science-based sprint, hurdle, and multi-event coaching for athletes of all levels. Based in Sydney.",
+            "text_style": "body"
+          }
+        },
+        "hero_cta": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Register for a Free Trial",
+            "button_link_1": "https://maximumeffort.academy/pages/how-to-join",
+            "button_style_secondary_1": false,
+            "button_label_2": "View Coaching Packages",
+            "button_link_2": "https://maximumeffort.academy/collections/coaching-services",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "hero_heading",
+        "hero_text",
+        "hero_cta"
+      ],
+      "settings": {
+        "image": "",
+        "image_overlay_opacity": 50,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "show_text_box": true,
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "color_scheme": "accent-2",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": true
+      }
+    },
     "custom_liquid_C4NhYG": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<div class=\"me-tiles-section\">\n  <div class=\"link-blocks-container\">\n      <!-- Block 1 -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Training Results\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Training Results</h2>\n              <p>View your training results and progress</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/training-results\" class=\"block-link\" aria-label=\"Go to Training Results\"></a>\n      </div>\n      \n      <!-- Block 2 -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Timetable\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Timetable</h2>\n              <p>Check our class schedule and availability</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/training-timetable\" class=\"block-link\" aria-label=\"Go to Timetable\"></a>\n      </div>\n      \n      <!-- Block 3 -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Coaching Fees\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Coaching Fees</h2>\n              <p>View our coaching packages and pricing</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/collections/coaching-services\" class=\"block-link\" aria-label=\"Go to Coaching Fees\"></a>\n      </div>\n      \n      <!-- Block 4 - Products -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Products\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Products</h2>\n              <p>Shop our exclusive merchandise</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/collections/products\" class=\"block-link\" aria-label=\"Shop Products\"></a>\n      </div>\n      \n      <!-- Block 5 -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Want to Know More\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Want to Know More</h2>\n              <p>Learn about our training methodology</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/about-us\" class=\"block-link\" aria-label=\"Go to Learn More\"></a>\n      </div>\n      \n      <!-- Block 6 -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Apply Here\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Apply Here</h2>\n              <p>Join our academy today</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/how-to-join\" class=\"block-link\" aria-label=\"Go to Apply\"></a>\n      </div>\n  </div>\n</div>\n\n<style>\n    /* Section wrapper */\n    .me-tiles-section {\n        width: 100%;\n        background-color: #ffffff;\n        padding: 40px 20px; /* Add padding to create space */\n        box-sizing: border-box;\n    }\n    \n    /* Reset styles */\n    .link-blocks-container * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n    \n    /* Container for blocks */\n    .link-blocks-container {\n        max-width: 1200px;\n        margin: 0 auto; /* Center the container */\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n        gap: 20px;\n        background-color: #ffffff; /* White background between tiles */\n    }\n    \n    /* Individual link block */\n    .link-block {\n        position: relative;\n        height: 250px;\n        overflow: hidden;\n        border-radius: 5px;\n        background-color: #000000; /* Black background */\n        border: 3px solid #ffffff; /* White border */\n        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n        transition: transform 0.3s ease, box-shadow 0.3s ease;\n    }\n    \n    .link-block:hover {\n        transform: translateY(-5px);\n        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);\n    }\n    \n    /* Background image for block */\n    .link-block-bg {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        object-fit: cover;\n        z-index: 1;\n        opacity: 0.9;\n        transition: opacity 0.3s ease;\n    }\n    \n    /* Content container */\n    .link-block-content {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        z-index: 2;\n        padding: 20px;\n        text-align: center;\n        color: #ffffff; /* White text */\n        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */\n    }\n    \n    .link-block:hover .link-block-bg {\n        opacity: 0.7;\n    }\n    \n    /* Title styling */\n    .link-block-title {\n        font-size: 24px;\n        font-weight: 700;\n        margin-bottom: 10px;\n        color: #ffffff; /* White text */\n    }\n    \n    /* Full block link */\n    .block-link {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        z-index: 3;\n        text-decoration: none;\n        color: inherit;\n    }\n    \n    /* Responsive adjustments */\n    @media (max-width: 768px) {\n        .link-blocks-container {\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            padding: 0 10px; /* Smaller padding on mobile */\n        }\n        \n        .link-block {\n            height: 200px;\n        }\n        \n        .link-block-title {\n            font-size: 20px;\n        }\n    }\n</style>\n\n<script>\n  document.addEventListener('DOMContentLoaded', function() {\n    const linkBlocks = document.querySelectorAll('.link-block');\n    \n    linkBlocks.forEach(block => {\n      block.addEventListener('click', function() {\n        const link = this.querySelector('.block-link');\n        if (link && link.href) {\n          window.location.href = link.href;\n        }\n      });\n    });\n  });\n</script>",
+        "custom_liquid": "<div class=\"me-tiles-section\">\n  <div class=\"link-blocks-container\">\n      <!-- Block 1: About -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"About Our Academy\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">About Our Academy</h2>\n              <p>Meet the coaches and our training philosophy</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/about-us\" class=\"block-link\" aria-label=\"Go to About Us\"></a>\n      </div>\n\n      <!-- Block 2: Apply Here (primary CTA) -->\n      <div class=\"link-block link-block--cta\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Apply Here\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Apply Here</h2>\n              <p>Register for a free come and try session</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/how-to-join\" class=\"block-link\" aria-label=\"Go to Apply\"></a>\n      </div>\n\n      <!-- Block 3: Coaching Fees -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Coaching Fees\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Coaching Fees</h2>\n              <p>View our coaching packages and pricing</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/collections/coaching-services\" class=\"block-link\" aria-label=\"Go to Coaching Fees\"></a>\n      </div>\n\n      <!-- Block 4: Timetable -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Timetable\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Timetable</h2>\n              <p>Check our class schedule and availability</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/training-timetable\" class=\"block-link\" aria-label=\"Go to Timetable\"></a>\n      </div>\n\n      <!-- Block 5: Training Results -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Training Results\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Training Results</h2>\n              <p>View athlete progress and performance data</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/pages/training-results\" class=\"block-link\" aria-label=\"Go to Training Results\"></a>\n      </div>\n\n      <!-- Block 6: Products -->\n      <div class=\"link-block\">\n          <img src=\"/api/placeholder/500/500\" alt=\"Products\" class=\"link-block-bg\">\n          <div class=\"link-block-content\">\n              <h2 class=\"link-block-title\">Products</h2>\n              <p>Shop our exclusive merchandise</p>\n          </div>\n          <a href=\"https://maximumeffort.academy/collections/products\" class=\"block-link\" aria-label=\"Shop Products\"></a>\n      </div>\n  </div>\n</div>\n\n<style>\n    .me-tiles-section {\n        width: 100%;\n        background-color: #ffffff;\n        padding: 40px 20px;\n        box-sizing: border-box;\n    }\n\n    .link-blocks-container * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n    }\n\n    .link-blocks-container {\n        max-width: 1200px;\n        margin: 0 auto;\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n        gap: 20px;\n        background-color: #ffffff;\n    }\n\n    .link-block {\n        position: relative;\n        height: 250px;\n        overflow: hidden;\n        border-radius: 5px;\n        background-color: #000000;\n        border: 3px solid #ffffff;\n        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n        transition: transform 0.3s ease, box-shadow 0.3s ease;\n    }\n\n    .link-block:hover {\n        transform: translateY(-5px);\n        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);\n    }\n\n    /* Highlight the primary CTA tile */\n    .link-block--cta {\n        border-color: #82f2b3;\n        box-shadow: 0 4px 12px rgba(130, 242, 179, 0.3);\n    }\n\n    .link-block-bg {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        object-fit: cover;\n        z-index: 1;\n        opacity: 0.9;\n        transition: opacity 0.3s ease;\n    }\n\n    .link-block-content {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        z-index: 2;\n        padding: 20px;\n        text-align: center;\n        color: #ffffff;\n        background-color: rgba(0, 0, 0, 0.35);\n    }\n\n    .link-block:hover .link-block-bg {\n        opacity: 0.7;\n    }\n\n    .link-block-title {\n        font-size: 24px;\n        font-weight: 700;\n        margin-bottom: 10px;\n        color: #ffffff;\n    }\n\n    .block-link {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        z-index: 3;\n        text-decoration: none;\n        color: inherit;\n    }\n\n    @media (max-width: 768px) {\n        .link-blocks-container {\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            padding: 0 10px;\n        }\n\n        .link-block {\n            height: 200px;\n        }\n\n        .link-block-title {\n            font-size: 20px;\n        }\n    }\n</style>\n\n<script>\n  document.addEventListener('DOMContentLoaded', function() {\n    const linkBlocks = document.querySelectorAll('.link-block');\n    linkBlocks.forEach(block => {\n      block.addEventListener('click', function() {\n        const link = this.querySelector('.block-link');\n        if (link && link.href) {\n          window.location.href = link.href;\n        }\n      });\n    });\n  });\n</script>",
         "color_scheme": "accent-2",
         "padding_top": 40,
         "padding_bottom": 52
@@ -38,6 +77,7 @@
     }
   },
   "order": [
+    "hero_banner",
     "custom_liquid_C4NhYG",
     "174684717987e48466"
   ]
