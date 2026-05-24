@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "school_hiring_cta": {
+      "type": "school-hiring-cta",
+      "name": "School/Club Hiring CTA",
+      "settings": {
+        "title": "Partner with Maximum Effort",
+        "text": "<p>Elevate your school or club athletics program with our specialist coaching services. We provide professional support for:</p><ul><li><strong>School Sport Programs:</strong> Curriculum-aligned athletics coaching for primary and secondary students.</li><li><strong>Club Workshops:</strong> Specialist clinics for sprints, jumps, and strength conditioning.</li><li><strong>Coach Mentoring:</strong> Professional development for your PE staff or club volunteers.</li><li><strong>Elite Athlete:</strong> Reach out and let's collaborate.</li></ul><p>Fully insured and compliant with all Working With Children requirements.</p>",
+        "link": "mailto:coach@maximumeffort.academy",
+        "btn_label": "Enquire Now",
+        "bg_color": "#1c1c1c",
+        "text_color": "#ffffff",
+        "btn_color": "#4661cb",
+        "btn_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "school_hiring_cta"
+  ]
+}
