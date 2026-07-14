@@ -173,8 +173,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (dateObj >= new Date()) {
               const option = document.createElement('option');
               const formattedDate = dateObj.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-              option.value = JSON.stringify({ title: `${typeStr} Session`, date: `${formattedDate} at ${session['Start Time']}` });
-              option.textContent = `${formattedDate} at ${session['Start Time']} (${typeStr})`;
+              option.value = JSON.stringify({ title: `${typeStr} Session`, date: `${formattedDate} at ${session['Start Time']}`, venue: session.Venue });
+              option.textContent = `${formattedDate} at ${session['Start Time']} - ${session.Venue} (${typeStr})`;
               sessionSelect.appendChild(option);
             }
           }
@@ -240,7 +240,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           name: userName,
           email: userEmail,
           sessionTitle: sessionData.title,
-          sessionDate: sessionData.date
+          sessionDate: sessionData.date,
+          sessionVenue: sessionData.venue
         })
       });
 
