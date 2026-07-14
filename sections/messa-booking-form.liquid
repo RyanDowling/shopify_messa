@@ -126,11 +126,23 @@ document.addEventListener('DOMContentLoaded', async () => {
           const dateStr = session.Date || session.date || '';
           const typeStr = Array.isArray(session['Session Type']) ? session['Session Type'].join(', ') : (session['Session Type'] || '');
           
-          if (dateStr && typeStr && typeStr.toLowerCase().includes('try')) {
-            const option = document.createElement('option');
-            option.value = JSON.stringify({ title: typeStr, date: dateStr });
-            option.textContent = `${dateStr} - ${typeStr}`;
-            sessionSelect.appendChild(option);
+          // A valid session for "Come & Try" is any session that has a Start Time, isn't cancelled, 
+          // and isn't an All-Day event, Competition, or Rest day.
+          const isAllDay = session['All Day Flag'] === 'Y';
+          const isCancelled = session.Venue === 'CANCELLED';
+          const isCompetition = typeStr.includes('Competition');
+          const isRest = typeStr.includes('Rest');
+          
+          if (dateStr && session['Start Time'] && !isAllDay && !isCancelled && !isCompetition && !isRest) {
+            const dateObj = new Date(dateStr);
+            // Only show future sessions
+            if (dateObj >= new Date()) {
+              const option = document.createElement('option');
+              const formattedDate = dateObj.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+              option.value = JSON.stringify({ title: `${typeStr} Session`, date: `${formattedDate} at ${session['Start Time']}` });
+              option.textContent = `${formattedDate} at ${session['Start Time']} (${typeStr})`;
+              sessionSelect.appendChild(option);
+            }
           }
         });
         sessionSelect.disabled = false;
