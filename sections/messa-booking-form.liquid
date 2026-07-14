@@ -1,0 +1,234 @@
+<div class="messa-booking-section page-width">
+  <div class="messa-booking-container">
+    <h2 class="messa-title">{{ section.settings.heading }}</h2>
+    <p class="messa-subtitle">{{ section.settings.subheading }}</p>
+
+    <form id="messaBookingForm" class="messa-form">
+      <!-- Session Dropdown -->
+      <div class="messa-field">
+        <label for="sessionSelect">Select a Session</label>
+        <select id="sessionSelect" name="sessionSelect" required disabled>
+          <option value="">Loading sessions...</option>
+        </select>
+      </div>
+
+      <!-- Name -->
+      <div class="messa-field">
+        <label for="userName">Full Name</label>
+        <input type="text" id="userName" name="userName" required placeholder="John Doe">
+      </div>
+
+      <!-- Email -->
+      <div class="messa-field">
+        <label for="userEmail">Email Address</label>
+        <input type="email" id="userEmail" name="userEmail" required placeholder="john@example.com">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBooking" class="button button--primary" disabled>
+        Book Now
+      </button>
+
+      <div id="bookingMessage" class="messa-message" style="display: none;"></div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .messa-booking-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+  }
+  .messa-booking-container {
+    max-width: 500px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .messa-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .messa-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  .messa-field {
+    margin-bottom: 1.5rem;
+  }
+  .messa-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  .messa-field input,
+  .messa-field select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.6rem;
+  }
+  .messa-form button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .messa-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .messa-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  .messa-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const form = document.getElementById('messaBookingForm');
+  const sessionSelect = document.getElementById('sessionSelect');
+  const submitBtn = document.getElementById('submitBooking');
+  const messageEl = document.getElementById('bookingMessage');
+
+  // Configuration URLs - These need to be set correctly for production
+  const GOOGLE_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwBTm5jSrRs2Shzg9au8ENInjJbwPMmKLFIXU9MFb5oQ2JaF--oGT5cBBB_bYVsdZBhZQ/exec'; 
+  const SUPABASE_EDGE_FUNCTION_URL = 'https://tnyionuhakagkkoexeiw.supabase.co/functions/v1/book-session';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRueWlvbnVoYWthZ2trb2V4ZWl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzNzg3NDksImV4cCI6MjA4NDk1NDc0OX0.1cWZTj_LlrKIa9cQ7WsYfplIiAoyAavI3Tvsy6DoMG4';
+
+  // 1. Fetch available sessions from Google Apps Script
+  try {
+    // If you haven't deployed the GAS script as a web app yet, you'll need to do that
+    // For now, we'll gracefully handle it if the URL isn't set
+    if (GOOGLE_WEB_APP_URL.includes('YOUR_GOOGLE_APP_SCRIPT_URL_HERE')) {
+      sessionSelect.innerHTML = '<option value="">(Update Google Web App URL in code)</option>';
+    } else {
+      const response = await fetch(`${GOOGLE_WEB_APP_URL}?action=getSchedule`);
+      const data = await response.json();
+      
+      if (data && data.data && data.data.length > 0) {
+        sessionSelect.innerHTML = '<option value="">Select a session...</option>';
+        data.data.forEach(session => {
+          // Assuming the GAS script returns Date and Session Type
+          const dateStr = session.Date || session.date || '';
+          const typeStr = Array.isArray(session['Session Type']) ? session['Session Type'].join(', ') : (session['Session Type'] || '');
+          
+          if (dateStr && typeStr && typeStr.toLowerCase().includes('try')) {
+            const option = document.createElement('option');
+            option.value = JSON.stringify({ title: typeStr, date: dateStr });
+            option.textContent = `${dateStr} - ${typeStr}`;
+            sessionSelect.appendChild(option);
+          }
+        });
+        sessionSelect.disabled = false;
+        submitBtn.disabled = false;
+      } else {
+        sessionSelect.innerHTML = '<option value="">No upcoming sessions found</option>';
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching sessions:', error);
+    sessionSelect.innerHTML = '<option value="">Error loading sessions</option>';
+  }
+
+  // 2. Handle form submission to Supabase Edge Function
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Booking...';
+    messageEl.style.display = 'none';
+    messageEl.className = 'messa-message';
+
+    const selectedSessionValue = sessionSelect.value;
+    if (!selectedSessionValue) {
+      showMessage('Please select a valid session.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Book Now';
+      return;
+    }
+
+    const sessionData = JSON.parse(selectedSessionValue);
+    const userName = document.getElementById('userName').value;
+    const userEmail = document.getElementById('userEmail').value;
+
+    try {
+      const response = await fetch(SUPABASE_EDGE_FUNCTION_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        },
+        body: JSON.stringify({
+          name: userName,
+          email: userEmail,
+          sessionTitle: sessionData.title,
+          sessionDate: sessionData.date
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        showMessage('Success! Check your email for the confirmation.', 'success');
+        form.reset();
+        sessionSelect.value = '';
+      } else {
+        throw new Error(result.error || 'Something went wrong');
+      }
+    } catch (error) {
+      console.error('Booking error:', error);
+      showMessage(error.message, 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Book Now';
+    }
+  });
+
+  function showMessage(text, type) {
+    messageEl.textContent = text;
+    messageEl.classList.add(type);
+    messageEl.style.display = 'block';
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "MESSA Booking Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Book a Come & Try Session"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Select an upcoming session below to get started."
+    }
+  ],
+  "presets": [
+    {
+      "name": "MESSA Booking Form",
+      "category": "Forms"
+    }
+  ]
+}
+{% endschema %}

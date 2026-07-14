@@ -14,26 +14,18 @@
         "custom_liquid": "<div class=\"onboarding-steps\">\n  <div class=\"onboarding-steps__inner\">\n    <div class=\"onboarding-step onboarding-step--active\">\n      <span class=\"onboarding-step__num\">1</span>\n      <span class=\"onboarding-step__label\">Come &amp; Try</span>\n    </div>\n    <div class=\"onboarding-step__connector\"></div>\n    <div class=\"onboarding-step\">\n      <span class=\"onboarding-step__num\">2</span>\n      <span class=\"onboarding-step__label\">Register as a Member</span>\n    </div>\n  </div>\n</div>\n\n<style>\n  .onboarding-steps {\n    padding: 20px 20px 0;\n  }\n  .onboarding-steps__inner {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 0;\n    max-width: 420px;\n    margin: 0 auto;\n  }\n  .onboarding-step {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 6px;\n    opacity: 0.35;\n  }\n  .onboarding-step--active {\n    opacity: 1;\n  }\n  .onboarding-step__num {\n    width: 36px;\n    height: 36px;\n    border-radius: 50%;\n    background-color: #27282a;\n    color: #ffffff;\n    font-weight: 700;\n    font-size: 0.95rem;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n  .onboarding-step--active .onboarding-step__num {\n    background-color: #82f2b3;\n    color: #0a2910;\n  }\n  .onboarding-step__label {\n    font-size: 0.8rem;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    color: #27282a;\n    white-space: nowrap;\n  }\n  .onboarding-step__connector {\n    flex: 1;\n    height: 2px;\n    background-color: #e0e0e0;\n    margin: 0 12px;\n    margin-bottom: 22px;\n  }\n</style>"
       }
     },
-    "forms": {
-      "type": "apps",
-      "blocks": {
-        "045d7ebc-2b7e-40e4-a340-d531d53cd0df": {
-          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
-          "settings": {
-            "form_id": "665479"
-          }
-        }
-      },
-      "block_order": [
-        "045d7ebc-2b7e-40e4-a340-d531d53cd0df"
-      ],
-      "settings": {}
+    "booking_form": {
+      "type": "messa-booking-form",
+      "settings": {
+        "heading": "Book a Come & Try Session",
+        "subheading": "Select an upcoming session below to get started."
+      }
     }
   },
   "order": [
     "athlete_categories",
     "7fd2522f-43c3-4b86-bf32-ac76cd9e28cc",
     "onboarding_steps",
-    "forms"
+    "booking_form"
   ]
 }
