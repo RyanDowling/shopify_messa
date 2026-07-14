@@ -32,7 +32,8 @@
           <option value="Under 12">Under 12</option>
           <option value="12-15">12-15</option>
           <option value="16-19">16-19</option>
-          <option value="20+">20+</option>
+          <option value="20+ Open">20+ Open</option>
+          <option value="Masters 35+">Masters 35+</option>
         </select>
       </div>
 
@@ -219,7 +220,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     if (ageGroup === 'Under 12') {
-      showMessage('Not currently onboarding any under 12, sorry.', 'error');
+      showMessage('Sorry, not currently onboarding this age group.', 'error');
       submitBtn.disabled = false;
       submitBtn.textContent = 'Book Now';
       return;
