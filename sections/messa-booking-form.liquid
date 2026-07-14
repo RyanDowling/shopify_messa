@@ -24,6 +24,26 @@
         <input type="email" id="userEmail" name="userEmail" required placeholder="john@example.com">
       </div>
 
+      <!-- Age Group -->
+      <div class="messa-field">
+        <label for="ageGroup">Athlete Age Group</label>
+        <select id="ageGroup" name="ageGroup" required>
+          <option value="">Select age group...</option>
+          <option value="Under 12">Under 12</option>
+          <option value="12-15">12-15</option>
+          <option value="16-19">16-19</option>
+          <option value="20+">20+</option>
+        </select>
+      </div>
+
+      <!-- Coach Checkbox -->
+      <div class="messa-field messa-checkbox">
+        <label>
+          <input type="checkbox" id="noCoach" name="noCoach">
+          I do not currently have a coach
+        </label>
+      </div>
+
       <!-- Submit Button -->
       <button type="submit" id="submitBooking" class="button button--primary" disabled>
         Book Now
@@ -67,13 +87,26 @@
     font-weight: bold;
     font-size: 1.4rem;
   }
-  .messa-field input,
+  .messa-field input[type="text"],
+  .messa-field input[type="email"],
   .messa-field select {
     width: 100%;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1.6rem;
+  }
+  .messa-checkbox label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .messa-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
   }
   .messa-form button {
     width: 100%;
@@ -173,9 +206,26 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    const sessionData = JSON.parse(selectedSessionValue);
     const userName = document.getElementById('userName').value;
     const userEmail = document.getElementById('userEmail').value;
+    const ageGroup = document.getElementById('ageGroup').value;
+    const noCoachChecked = document.getElementById('noCoach').checked;
+
+    if (!noCoachChecked) {
+      showMessage('Sorry, we do not share the duties of coaching outside the academy.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Book Now';
+      return;
+    }
+
+    if (ageGroup === 'Under 12') {
+      showMessage('Not currently onboarding any under 12, sorry.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Book Now';
+      return;
+    }
+
+    const sessionData = JSON.parse(selectedSessionValue);
 
     try {
       const response = await fetch(SUPABASE_EDGE_FUNCTION_URL, {
