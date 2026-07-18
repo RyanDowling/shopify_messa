@@ -12,6 +12,17 @@
     "main": {
       "type": "coach-profiles",
       "blocks": {
+        "coach_TbHWwM": {
+          "type": "coach",
+          "settings": {
+            "name": "Monique Perry",
+            "role": "Assistant Coach | Track & GYM",
+            "wwcc": "WWC1234567",
+            "bio": "<p>Monique in her own right is an outstanding Masters track athlete still competing in both Open and Masters events.</p><p>Monique works together with the squad as a role model for the Masters group and assistant to the Monday and Tuesday afternoon program</p><p><strong>Elite Performance History:</strong></p><ul><li>2019 World Masters Indoor Silver Medalist</li><li>2024 World Masters 100m Champion</li><li>Achieved multiple Open National qualifying standards</li></ul><p></p><p>Monique also works full-time in C-suite roles currently filling the position of CEO - Choice Magazine</p>",
+            "committee_role": "Not currently serving",
+            "linkedin": "https://au.linkedin.com/in/monique-perry-9512243"
+          }
+        },
         "coach_G9FwnE": {
           "type": "coach",
           "settings": {
@@ -38,6 +49,7 @@
         }
       },
       "block_order": [
+        "coach_TbHWwM",
         "coach_G9FwnE",
         "coach_yHQwei"
       ],
